@@ -4,7 +4,7 @@ h1{
   font-weight: bold;
 }
 
-.data-block span{
+.data-block div{
   display: block;
   text-align: justify;
 }
@@ -14,7 +14,7 @@ h1{
   font-weight: bold;
 }
 
-.data-block span h3{
+.data-block div h3{
   font-weight: bold;
 }
 
