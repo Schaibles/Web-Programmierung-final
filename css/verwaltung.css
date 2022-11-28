@@ -1,0 +1,31 @@
+.administration-head{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.administration-head a{
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.button-head{
+  width: 250px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-color: 2px black;
+  border-radius: 5px;
+}
+
+.button-head:hover{
+  background-color: #EA1F25;
+  color:black;
+  border-color: 2px black;
+}

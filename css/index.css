@@ -1,0 +1,38 @@
+.index-img{
+  margin: 0;
+}
+.index-img img{
+  width: 1000px;
+}
+
+.index-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  
+}
+
+.index-content-head{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin: auto;
+}
+
+.index-content-body{
+  display:grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin: auto;
+}
+
+.index-content-head img{
+  height: 80px;
+}
+
+.index-content-head p{
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}

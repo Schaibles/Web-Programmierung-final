@@ -1,0 +1,85 @@
+*{
+  font-family: Helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 150%;
+}
+
+.fixed-width{
+  width: 1000px;
+  margin: auto;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  height: 80px;
+  display: flex;
+}
+
+header a, header img{
+  height: inherit;
+}
+
+header nav{
+  flex-grow: 1;
+  text-align: right;
+  margin: auto;
+}
+
+header nav a:visited, header nav a:link, header nav a:hover{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 30px
+}
+
+header nav a:hover{
+  text-decoration: underline;
+}
+
+
+footer{
+  background-color: white;
+  color: white;
+  margin-top: 20px;
+  height: 80px;
+}
+
+.footer-area{
+  background-color: #4D4D4D;
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.footer-img{
+  flex-grow: 1;
+  text-align: left;
+  margin: auto;
+}
+
+.footer-copy{
+  flex-grow: 1;
+  text-align: center;
+  margin: auto;
+}
+
+footer nav{
+  flex-grow: 1;
+  text-align: right;
+  margin: auto;
+}
+
+footer nav a:visited, footer nav a:link, footer nav a:hover{
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+footer nav a:hover{
+  text-decoration: underline;
+}
