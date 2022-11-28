@@ -43,6 +43,13 @@ h1{
   border-color: 2px black;
   border-radius: 5px;
 }
+
+.disabled-button:hover{
+  background-color: #EA1F25;
+  color:black;
+  border-color: 2px black;
+
+}
 .create-button{
   width: 300px;
   height: 40px;

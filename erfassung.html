@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="css/common.css"/>
   <link rel="stylesheet" href="css/erfassung.css"/>
 </head>
-<body>
+<body onload="initialize()">
 <header class="fixed-width">
   <a href= "index.html">
     <img src="img/powertrack_logo.png">
@@ -18,7 +18,7 @@
 
 
 <main class="fixed-width">
-  <h1>
+  <h1 id="page-title">
     Z&auml;hlerstand erfassen
   </h1>
    
@@ -32,19 +32,22 @@
     <div class="create-group-counter">
       <label for="counter">Z&auml;hlerstand in kW/h*</label>
       <p>Tragen Sie hier den abgelesenen Z&auml;hlerstand in der Einheit kWh ein.</p>
-      <input id="counter" type="text">
+      <input id="counter" type="number">
     </div>
 
   </form>
 
   <div class="create-group-capture">
     <a href="verwaltung.html">
-      <button class="disabled-button">Abbrechen</button>
+      <button class="disabled-button">
+        Abbrechen
+      </button>
     </a>
     
     <a href="verwaltung.html">
-      <button class="create-button"
-      onclick="save()" id="save-btn">Anlegen</button>
+      <button class="create-button" onclick="save()" id="save-btn">
+        Anlegen
+      </button>
     </a>
 
 </main>
@@ -73,5 +76,9 @@
   </div>
 
 </footer>
+
+<script src="js/common.js"></script>
+<script src="js/erfassung.js"></script>
+
 </body>
 </html>
