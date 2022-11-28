@@ -22,7 +22,10 @@ function showEntrys(entries) {
           </div>
           <div class="administration-counter">
               <img src="img/counter_dark.png"/>
-              <p>${entry.counter}</p>
+              <p>&nbsp;${entry.counter}&nbsp;kWh</p>
+          </div>
+          <div>
+            <img src="img/energy-consumption_dark.png">
           </div>
           <div class="administration-delete">
               <img src="img/delete.png" onclick="deleteEntry('${entry.id}')"/>

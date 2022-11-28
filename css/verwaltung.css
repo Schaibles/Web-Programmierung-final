@@ -29,3 +29,31 @@ h1{
   color:black;
   border-color: 2px black;
 }
+
+.list-allentries li{
+  display: flex;
+  padding: 10px 0px;
+  justify-content: space-between;
+}
+
+.list-allentries img{
+  width: 50px;
+  height: 100%;
+}
+
+.list-allentries div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.list-allentries p{
+  margin: auto;
+  font-weight: bold;
+}
+
+.list-allentries li:nth-child(odd){
+  background-color: #E6E6E6; 
+}
