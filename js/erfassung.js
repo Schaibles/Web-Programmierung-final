@@ -8,18 +8,16 @@
   var taskId = new URLSearchParams(location.search).get("id");
   if (taskId) {
       console.debug(`Page loaded in edit mode for task with ID: ${taskId}`);
-      var task = getTaskById(loadStoredTasks(), taskId);
+      var task = getEntryById(loadStoredEntrys(), taskId);
       if (task) {
-          setValueById("title", task.title);
-          setValueById("notes", task.notes);
-          setValueById("due", task.due);
-          setValueById("responsible", task.responsible);
+          setValueById("date", task.date);
+          setValueById("counter", task.counter);
 
-          setTextContentById("page-title", "Aufgabe bearbeiten");
-          setTextContentById("save-btn", "Speichern");
-          setAttributeById("save-btn", "onclick", `save('${taskId}')`);
+          //setTextContentById("page-title", "Aufgabe bearbeiten");
+          setTextContentById("save-button", "Speichern");
+          setAttributeById("save-button", "onclick", `save('${taskId}')`);
       } else {
-          console.error("Task not found for ID: " + taskId);
+          console.error("Entry not found for ID: " + taskId);
       }
   } else {
       console.debug("Page loaded in create mode");
@@ -79,7 +77,7 @@ function setAttributeById(id, attributeName, attributeValue) {
 * @param id The ID of the task to search for.
 * @returns {any|undefined} The task, if it was found.
 */
-function getTaskById(tasks, id) {
+function getEntryById(tasks, id) {
   for (var task of tasks) {
       if (task.id === id) {
           return task;
@@ -94,16 +92,16 @@ function getTaskById(tasks, id) {
 * @param id The ID of the task, if a task should be updated.
 */
 function save(id) {
-  var tasks = loadStoredTasks();
-  var task = createTaskFromInput(id);
+  var tasks = loadStoredEntrys();
+  var task = createEntryFromInput(id);
 
   if (id) {
-      replaceTask(tasks, id, task);
+      replaceEntry(tasks, id, task);
   } else {
-      tasks.push(createTaskFromInput());
+      tasks.push(createEntryFromInput());
   }
-  storeTasks(tasks);
-  console.debug("Task saved");
+  storeEntrys(tasks);
+  console.debug("Entry saved");
 }
 
 /**
@@ -111,13 +109,13 @@ function save(id) {
 *
 * @param tasks The array in which the task should be replaced.
 * @param idToReplace The ID of the task to replace.
-* @param updatedTask The task object replacing the task with the given ID.
+* @param updatedEntry The task object replacing the task with the given ID.
 */
-function replaceTask(tasks, idToReplace, updatedTask) {
-  if (tasks && idToReplace && updatedTask) {
+function replaceEntry(tasks, idToReplace, updatedEntry) {
+  if (tasks && idToReplace && updatedEntry) {
       for (var i = 0; i < tasks.length; i++) {
           if (tasks[i].id === idToReplace) {
-              tasks[i] = updatedTask
+              tasks[i] = updatedEntry
               return;
           }
       }
@@ -131,13 +129,12 @@ function replaceTask(tasks, idToReplace, updatedTask) {
 * Create a task object from the values of the form input fields related to a task.
 *
 * @param id An existing ID, if it is known. If not provided, a new ID will be generated.
-* @returns {{notes: (*|undefined), due: (*|undefined), responsible: (*|undefined), id: string, title: (*|undefined)}} Task object.
+* @returns {{date: (*|undefined), counter: (*|undefined), id: string}} Entry object.
 */
-function createTaskFromInput(id) {
-  var title = getInputValueById("title");
-  var notes = getInputValueById("notes");
-  var responsible = getInputValueById("responsible");
-  var due = getInputValueById("due");
+function createEntryFromInput(id) {
+  var date = getInputValueById("date");
+  var counter = getInputValueById("counter");
+
 
   // If no ID is provided, we create one
   if (!id) {
@@ -146,10 +143,9 @@ function createTaskFromInput(id) {
 
   return {
       id: id,
-      title: title,
-      notes: notes,
-      due: due,
-      responsible: responsible
+      date: date,
+      counter: counter,
+      
   }
 }
 

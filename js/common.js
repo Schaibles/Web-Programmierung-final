@@ -3,10 +3,10 @@
  *
  * @returns {*[]|any} Stored tasks from local storage or empty array, if no tasks were present.
  */
- function loadStoredTasks() {
-  var storedTasksJson = localStorage.getItem("tasks");
-  if (storedTasksJson) {
-      var tasks = JSON.parse(storedTasksJson);
+ function loadStoredEntrys() {
+  var storedEntrysJson = localStorage.getItem("tasks");
+  if (storedEntrysJson) {
+      var tasks = JSON.parse(storedEntrysJson);
       console.debug(`Count of loaded tasks: ${tasks.length}`);
       return tasks;
   }
@@ -17,9 +17,9 @@
 /**
 * Store tasks in the local storage.
 *
-* @param tasks Tasks to store.
+* @param tasks Entrys to store.
 */
-function storeTasks(tasks) {
+function storeEntrys(tasks) {
   if (tasks) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
       console.debug(`Count of stored tasks: ${tasks.length}`);
