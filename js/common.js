@@ -45,7 +45,7 @@ function bblSort(entrys){
        
       // Checking if the item at present iteration
       // is greater than the next iteration
-      if(entrys[j].date > entrys[j+1].date){
+      if(entrys[j].date > entrys[j+1].date){ //< tauschen! 
          
         // If the condition is true then swap them
         var temp = entrys[j]
@@ -55,6 +55,6 @@ function bblSort(entrys){
     }
   }
   // Print the sorted entrysay
-  console.log(entrys);
+  return entrys.reversed();
  }
   
