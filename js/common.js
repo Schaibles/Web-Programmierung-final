@@ -55,6 +55,6 @@ function bblSort(entrys){
     }
   }
   // Print the sorted entrysay
-  return entrys.reversed();
+  return entrys.reverse();
  }
   

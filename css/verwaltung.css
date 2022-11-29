@@ -54,6 +54,7 @@ h1{
 }
 
 .list-allentries p{
+  font-size: 18px;
   margin: auto;
   font-weight: bold;
 }
@@ -85,7 +86,7 @@ h1{
 }
 
 .p-energy-consumption h2{
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   font-style: italic;
   margin-top: auto;
