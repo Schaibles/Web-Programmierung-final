@@ -8,8 +8,10 @@
   if (storedEntrysJson) {
       var entrys = JSON.parse(storedEntrysJson);
       console.debug(`Count of loaded entrys: ${entrys.length}`);
-      return entrys;
+      var storedEntrys = bblSort(entrys)
+      return storedEntrys;
   }
+  
 
   return [];
 }
@@ -28,22 +30,31 @@ function storeEntrys(entrys) {
   }
 }
 
-/*
-public class BubbleSortEntrys {  
-  static void bubbleSort(loadStoredEntrys()) {  
-      int n = entrys.length;  
-      int temp = 0;  
-       for(int i=0; i < n; i++){  
-               for(int j=1; j < (n-i); j++){  
-                        if(entrys[j-1] > entrys[j]){  
-                               //swap elements  
-                               temp = entrys[j-1];  
-                               entrys[j-1] = entrys[j];  
-                               entrys[j] = temp;  
-                       }  
-                        
-               }  
-       }  
 
+
+// Bubble sort Implementation using Javascript
+ 
+ 
+// Creating the bblSort function
+function bblSort(entrys){
+    
+  for(var i = 0; i < entrys.length; i++){
+     
+    // Last i elements are already in place 
+    for(var j = 0; j < ( entrys.length - i -1 ); j++){
+       
+      // Checking if the item at present iteration
+      // is greater than the next iteration
+      if(entrys[j].date > entrys[j+1].date){
+         
+        // If the condition is true then swap them
+        var temp = entrys[j]
+        entrys[j] = entrys[j + 1]
+        entrys[j+1] = temp
+      }
+    }
   }
-}*/
+  // Print the sorted entrysay
+  console.log(entrys);
+ }
+  
