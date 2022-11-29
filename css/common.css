@@ -42,7 +42,7 @@ header nav a:hover{
 
 
 footer{
-  background-color: white;
+  background-color: #4D4D4D;
   color: white;
   margin-top: 20px;
   height: 80px;
@@ -50,6 +50,7 @@ footer{
 
 .footer-area{
   background-color: #4D4D4D;
+  color: white;
   display: flex;
   width: 1000px;
   margin: auto;

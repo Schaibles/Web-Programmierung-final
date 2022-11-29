@@ -30,8 +30,13 @@ h1{
   border-color: 2px black;
 }
 
+.list-allentries{
+  padding-left: 0px;
+}
+
 .list-allentries li{
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% 30% 30% 10%;
   padding: 10px 0px;
   justify-content: space-between;
 }
@@ -39,11 +44,10 @@ h1{
 .list-allentries img{
   width: 50px;
   height: 100%;
+  margin-left: auto;
 }
 
 .list-allentries div{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 5px 10px;
   margin-top: auto;
   margin-bottom: auto;
@@ -61,7 +65,29 @@ h1{
 .administration-counter{
   width: 250px;
 }
+.administration-date{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-.administration-counter p{
-  text-align: left;
+.administration-counter{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.energy-consumption{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.p-energy-consumption{
+  display: flex;
+  flex-direction: column;
+}
+
+.p-energy-consumption h2{
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: auto;
+  margin-bottom: auto;
 }

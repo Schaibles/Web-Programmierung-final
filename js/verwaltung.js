@@ -20,15 +20,20 @@ function showEntrys(entries) {
               <img src="img/calendar.png"/>
               <p>${formatDate(new Date(entry.date))}</p>
           </div>
+
           <div class="administration-counter">
               <img src="img/counter_dark.png"/>
               <p>&nbsp;${entry.counter}&nbsp;kWh</p>
           </div>
-          <div>
+
+          <div class="energy-consumption">
             <img src="img/energy-consumption_dark.png">
-            <p>&nbsp;${entry.calc}&nbsp;kWh</p>
-            <p>&nbsp;${entry.date_period}</p>
+            <div class="p-energy-consumption">
+              <p>&nbsp;${entry.calc}&nbsp;kWh</p>
+              <h2>&nbsp;${entry.date_period}</h2>
+            </div>
           </div>
+          
           <div class="administration-delete">
               <img src="img/delete.png" onclick="deleteEntry('${entry.id}')"/>
           </div>
