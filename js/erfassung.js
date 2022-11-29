@@ -1,23 +1,23 @@
 /**
- * Initialize the page. Will provide a form to create a new task, if no ID is provided as query parameter. If
+ * Initialize the page. Will provide a form to create a new entry, if no ID is provided as query parameter. If
  * an ID is provided as query parameter, an edit form will be shown.
  */
  function initialize() {
   console.debug("Initializing create and edit page")
 
-  var taskId = new URLSearchParams(location.search).get("id");
-  if (taskId) {
-      console.debug(`Page loaded in edit mode for task with ID: ${taskId}`);
-      var task = getEntryById(loadStoredEntrys(), taskId);
-      if (task) {
-          setValueById("date", task.date);
-          setValueById("counter", task.counter);
+  var entryId = new URLSearchParams(location.search).get("id");
+  if (entryId) {
+      console.debug(`Page loaded in edit mode for entry with ID: ${entryId}`);
+      var entry = getEntryById(loadStoredEntrys(), entryId);
+      if (entry) {
+          setValueById("date", entry.date);
+          setValueById("counter", entry.counter);
 
           //setTextContentById("page-title", "Aufgabe bearbeiten");
           setTextContentById("save-button", "Speichern");
-          setAttributeById("save-button", "onclick", `save('${taskId}')`);
+          setAttributeById("save-button", "onclick", `save('${entryId}')`);
       } else {
-          console.error("Entry not found for ID: " + taskId);
+          console.error("Entry not found for ID: " + entryId);
       }
   } else {
       console.debug("Page loaded in create mode");
@@ -71,16 +71,16 @@ function setAttributeById(id, attributeName, attributeValue) {
 }
 
 /**
-* Searches for a task contained in the local storage.
+* Searches for a entry contained in the local storage.
 *
-* @param tasks The list of tasks to search in.
-* @param id The ID of the task to search for.
-* @returns {any|undefined} The task, if it was found.
+* @param entries The list of entries to search in.
+* @param id The ID of the entry to search for.
+* @returns {any|undefined} The entry, if it was found.
 */
-function getEntryById(tasks, id) {
-  for (var task of tasks) {
-      if (task.id === id) {
-          return task;
+function getEntryById(entries, id) {
+  for (var entry of entries) {
+      if (entry.id === id) {
+          return entry;
       }
   }
   return undefined;
@@ -89,44 +89,44 @@ function getEntryById(tasks, id) {
 /**
 * Save the data contained in the form.
 *
-* @param id The ID of the task, if a task should be updated.
+* @param id The ID of the entry, if a entry should be updated.
 */
 function save(id) {
-  var tasks = loadStoredEntrys();
-  var task = createEntryFromInput(id);
+  var entries = loadStoredEntrys();
+  var entry = createEntryFromInput(id);
 
   if (id) {
-      replaceEntry(tasks, id, task);
+      replaceEntry(entries, id, entry);
   } else {
-      tasks.push(createEntryFromInput());
+      entries.push(createEntryFromInput());
   }
-  storeEntrys(tasks);
+  storeEntrys(entries);
   console.debug("Entry saved");
 }
 
 /**
-* Replace a task with a specific ID in a task array.
+* Replace a entry with a specific ID in a entry array.
 *
-* @param tasks The array in which the task should be replaced.
-* @param idToReplace The ID of the task to replace.
-* @param updatedEntry The task object replacing the task with the given ID.
+* @param entries The array in which the entry should be replaced.
+* @param idToReplace The ID of the entry to replace.
+* @param updatedEntry The entry object replacing the entry with the given ID.
 */
-function replaceEntry(tasks, idToReplace, updatedEntry) {
-  if (tasks && idToReplace && updatedEntry) {
-      for (var i = 0; i < tasks.length; i++) {
-          if (tasks[i].id === idToReplace) {
-              tasks[i] = updatedEntry
+function replaceEntry(entries, idToReplace, updatedEntry) {
+  if (entries && idToReplace && updatedEntry) {
+      for (var i = 0; i < entries.length; i++) {
+          if (entries[i].id === idToReplace) {
+              entries[i] = updatedEntry
               return;
           }
       }
   } else {
-      console.error("Invalid arguments to replace task");
+      console.error("Invalid arguments to replace entry");
   }
   console.error(`Element with ID not known: ${idToReplace}`);
 }
 
 /**
-* Create a task object from the values of the form input fields related to a task.
+* Create a entry object from the values of the form input fields related to a entry.
 *
 * @param id An existing ID, if it is known. If not provided, a new ID will be generated.
 * @returns {{date: (*|undefined), counter: (*|undefined), id: string}} Entry object.
@@ -145,6 +145,7 @@ function createEntryFromInput(id) {
       id: id,
       date: date,
       counter: counter,
+      
       
   }
 }

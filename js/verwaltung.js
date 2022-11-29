@@ -26,6 +26,8 @@ function showEntrys(entries) {
           </div>
           <div>
             <img src="img/energy-consumption_dark.png">
+            <p>&nbsp;${entry.calc}&nbsp;kWh</p>
+            <p>&nbsp;${entry.date_period}</p>
           </div>
           <div class="administration-delete">
               <img src="img/delete.png" onclick="deleteEntry('${entry.id}')"/>
@@ -41,6 +43,13 @@ function showEntrys(entries) {
   }
 }
 
+
+/*function calcDiff(id,counter){
+  var counter = counter;
+  if ("entries") > 0{
+
+  }
+}
 /**
 * Safely append a new element to an element identified by its ID.
 * @param id The ID of the parent element.
