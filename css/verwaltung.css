@@ -66,8 +66,7 @@ h1{
 .list-allentries ol{
   display: grid;
   grid-template-columns: 30% 30%;
-  padding-left: 33.5%;
-  grid-gap: 30px;
+  padding-left: 37%;
   background-color: #EA1F25;
   color: white;
 }

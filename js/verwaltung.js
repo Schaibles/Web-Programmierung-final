@@ -18,7 +18,7 @@ function showEntrys(entries) {
 
     <div class="administration-counter-total">
       <img src="img/counter_light.png"/>
-      <p>&nbsp;${entries[0].counter}&nbsp;kWh</p>
+      <p>&nbsp;${parseFloat(entries[0].counter).toFixed(2).replace(`.`,`,`)}&nbsp;kWh</p> 
     </div>
 
     <div class="energy-consumption-total">
