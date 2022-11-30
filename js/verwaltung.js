@@ -15,7 +15,7 @@ function showEntrys(entries) {
   if (entries) {  
     var count = 0; 
     var entryHtmlContentRed =`
-
+    <div></div>
     <div class="administration-counter-total">
       <img src="img/counter_light.png"/>
       <p>&nbsp;${parseFloat(entries[0].counter).toFixed(2).replace(`.`,`,`)}&nbsp;kWh</p> 

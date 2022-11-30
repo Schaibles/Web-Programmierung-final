@@ -36,7 +36,7 @@ h1{
 
 .list-allentries li{
   display: grid;
-  grid-template-columns: 30% 30% 30% 10%;
+  grid-template-columns: 25% 35% 30% 10%;
   padding: 10px 0px;
   justify-content: space-between;
 }
@@ -65,14 +65,18 @@ h1{
 
 .list-allentries ol{
   display: grid;
-  grid-template-columns: 30% 30%;
-  padding-left: 37%;
+  grid-template-columns: 21% 35% 30% 10%;
+  padding: 0%;
   background-color: #EA1F25;
   color: white;
 }
 
 .administration-counter{
   width: 250px;
+}
+
+.administration-counter p{
+  text-align: justify left;
 }
 .administration-date{
   display: grid;
@@ -101,7 +105,9 @@ h1{
   margin-bottom: auto;
 }
 
-
+.administration-counter-total p{
+  text-align: justify left;
+}
 
 .energy-consumption-total{
   display: grid;
