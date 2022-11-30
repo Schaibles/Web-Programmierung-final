@@ -31,7 +31,7 @@ function showEntrys(entries) {
     </div>
   </div>
   `;
-        var entryLi = document.createElement("list");
+        var entryLi = document.createElement("red");
           entryLi.innerHTML = entryHtmlContentRed;
           appendById("entries", entryLi);
   
