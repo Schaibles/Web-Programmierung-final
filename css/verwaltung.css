@@ -65,19 +65,14 @@ h1{
 
 .list-allentries ol{
   display: grid;
-  grid-template-columns: 21% 35% 30% 10%;
-  padding: 0%;
+  grid-template-columns: 25% 35% 30% 10%;
+  padding: 10px 0px;
+  justify-content: space-between;
   background-color: #EA1F25;
   color: white;
 }
 
-.administration-counter{
-  width: 250px;
-}
 
-.administration-counter p{
-  padding-left: 30px;
-}
 .administration-date{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -86,16 +81,27 @@ h1{
 .administration-counter{
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
+  width: 250px;
+}/*
+.administration-counter p{
+  padding-left: 30px;
+}*/
+
 .energy-consumption{
   display: grid;
   grid-template-columns: 20% 80%;
 }
-
-.p-energy-consumption{
+/*
+.p-energy-consumption{      //margin h2 off!
   display: flex;
   flex-direction: column;
-}
+}*/
+/*
+.p-energy-consumption p{    //Fragliche Funktion
+text-align: left;
+margin: 0px;
+}*/
+
 
 .p-energy-consumption h2{
   font-size: 16px;
@@ -104,7 +110,44 @@ h1{
   margin-top: auto;
   margin-bottom: auto;
 }
+/*//LI^^*/
 
+.administration-counter-total{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 250px;
+}/*
+.administration-counter p{
+  padding-left: 30px;
+}*/
+
+.energy-consumption-total{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+/*
+.p-energy-consumption{      //margin h2 off!
+  display: flex;
+  flex-direction: column;
+}*/
+/*
+.p-energy-consumption p{    //Fragliche Funktion
+text-align: left;
+margin: 0px;
+}*/
+
+
+.p-energy-consumption-total h2{
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/*
+//ALT*/
+
+/*
 .administration-counter-total p{
   text-align: justify left;
 }
@@ -134,6 +177,6 @@ h1{
 .administration-counter-total{
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
+}*/
 
 
