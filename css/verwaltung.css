@@ -92,3 +92,7 @@ h1{
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.list-allentries li{
+  background-color: #EA1F25;
+}

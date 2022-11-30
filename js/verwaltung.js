@@ -12,8 +12,32 @@
 * @param entries The entries to show in the entry list.
 */
 function showEntrys(entries) {
-  if (entries) {
+  if (entries) {  
+    var count = 0; 
+    var entryHtmlContentRed =`
+
+    <div class="administration-counter-total">
+      <img src="img/counter_dark.png"/>
+      <p>&nbsp;${entries[0].counter}&nbsp;kWh</p>
+    </div>
+
+    <div class="energy-consumption-total">
+      ${getImage(entries, count)}
+      <div class="p-energy-consumption">
+        <p>
+        &nbsp;${calcDiffTotal(entries, count)}&nbsp;
+      </p>
+      <h2>&nbsp;${getDate(entries, count)}</h2>
+    </div>
+  </div>
+  `;
+        var entryLi = document.createElement("list");
+          entryLi.innerHTML = entryHtmlContentRed;
+          appendById("entries", entryLi);
+  
       for (var entry of entries) {
+        
+        console.log(count);
           var entryHtmlContent = `
           
           <div class="administration-date">
@@ -23,14 +47,16 @@ function showEntrys(entries) {
 
           <div class="administration-counter">
               <img src="img/counter_dark.png"/>
-              <p>&nbsp;${entry.counter}&nbsp;kWh</p>
+              <p>&nbsp;${parseFloat(entry.counter).toFixed(2).replace(`.`,`,`)}&nbsp;kWh</p>
           </div>
 
           <div class="energy-consumption">
-            <img src="img/energy-consumption_dark.png">
+            ${getImage(entries, count)}
             <div class="p-energy-consumption">
-              <p>&nbsp;${entry.calc}&nbsp;kWh</p>
-              <h2>&nbsp;${entry.date_period}</h2>
+              <p>
+              &nbsp;${calcDiff(entries, count)}&nbsp;
+              </p>
+              <h2>&nbsp;${getDate(entries, count)}</h2>
             </div>
           </div>
           
@@ -38,7 +64,7 @@ function showEntrys(entries) {
               <img src="img/delete.png" onclick="deleteEntry('${entry.id}')"/>
           </div>
       `;
-
+      count = count+1;
           var entryLi = document.createElement("li");
           entryLi.innerHTML = entryHtmlContent;
           appendById("entries", entryLi);
@@ -49,10 +75,55 @@ function showEntrys(entries) {
 }
 
 
-/*function calcDiff(id,counter){
-  var counter = counter;
-  if ("entries") > 0{
+function calcDiff(entries, count){
+  if(count == entries.length-1){
+    return "";
+  
+  }
+  else{
+    return (entries[count].counter-entries[count+1].counter).toFixed(2).replace(`.`,`,`) +` kWh`;
+  }
+}
 
+function calcDiffTotal(entries, count){
+  if(count == entries.length-1){
+    return "";
+  
+  }
+  else{
+    return (entries[0].counter-entries[count].counter).toFixed(2).replace(`.`,`,`) +` kWh`;
+  }
+}
+
+function getImage(entries, count){
+  if(count == entries.length-1){
+    return "";
+  
+  }
+  else{
+    return `<img src="img/energy-consumption_dark.png">`;
+  }
+}
+
+function getDate(entries, count){
+  if(count == entries.length-1){
+    return "";
+  }
+  else{
+    return formatDate(new Date(entries[count+1].date)) 
+    + `-` 
+    +formatDate(new Date(entries[count].date));
+  }
+}
+
+function getDateTotal(entries, count){
+  if(count == entries.length-1){
+    return "";
+  }
+  else{
+    return formatDate(new Date(entries[count-entries.length].date)) 
+    + `-` 
+    +formatDate(new Date(entries[count].date));
   }
 }
 /**
