@@ -82,25 +82,13 @@ h1{
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 250px;
-}/*
-.administration-counter p{
-  padding-left: 30px;
-}*/
+}
 
 .energy-consumption{
   display: grid;
   grid-template-columns: 20% 80%;
 }
-/*
-.p-energy-consumption{      //margin h2 off!
-  display: flex;
-  flex-direction: column;
-}*/
-/*
-.p-energy-consumption p{    //Fragliche Funktion
-text-align: left;
-margin: 0px;
-}*/
+
 
 
 .p-energy-consumption h2{
@@ -110,31 +98,19 @@ margin: 0px;
   margin-top: auto;
   margin-bottom: auto;
 }
-/*//LI^^*/
+
 
 .administration-counter-total{
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 250px;
-}/*
-.administration-counter p{
-  padding-left: 30px;
-}*/
+}
 
 .energy-consumption-total{
   display: grid;
   grid-template-columns: 20% 80%;
 }
-/*
-.p-energy-consumption{      //margin h2 off!
-  display: flex;
-  flex-direction: column;
-}*/
-/*
-.p-energy-consumption p{    //Fragliche Funktion
-text-align: left;
-margin: 0px;
-}*/
+
 
 
 .p-energy-consumption-total h2{
@@ -144,39 +120,3 @@ margin: 0px;
   margin-top: auto;
   margin-bottom: auto;
 }
-/*
-//ALT*/
-
-/*
-.administration-counter-total p{
-  text-align: justify left;
-}
-
-.energy-consumption-total{
-  display: grid;
-  width: 300px;
-  height: 71px;
-  grid-template-columns: 20% 80%;
-  margin-left: 30px;
-}
-
-.p-energy-consumption-total{
-  display: flex;
-  flex-direction: column;
-  
-}
-
-.p-energy-consumption-total h2{
-  font-size: 16px;
-  font-weight: normal;
-  font-style: italic;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.administration-counter-total{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}*/
-
-
