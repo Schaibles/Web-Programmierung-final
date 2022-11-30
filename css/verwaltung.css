@@ -76,7 +76,7 @@ h1{
 }
 
 .administration-counter p{
-  text-align: justify left;
+  padding-left: 30px;
 }
 .administration-date{
   display: grid;
