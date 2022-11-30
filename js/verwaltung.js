@@ -91,7 +91,7 @@ function calcDiffTotal(entries, count){
   
   }
   else{
-    return (entries[0].counter-entries[count].counter).toFixed(2).replace(`.`,`,`) +` kWh`;
+    return (entries[count].counter-entries[entries.length-1].counter).toFixed(2).replace(`.`,`,`) +` kWh`;
   }
 }
 

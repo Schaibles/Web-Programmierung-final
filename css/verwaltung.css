@@ -63,6 +63,15 @@ h1{
   background-color: #E6E6E6; 
 }
 
+.list-allentries ol{
+  display: grid;
+  grid-template-columns: 30% 30%;
+  padding-left: 33.5%;
+  grid-gap: 30px;
+  background-color: #EA1F25;
+  color: white;
+}
+
 .administration-counter{
   width: 250px;
 }
@@ -93,13 +102,7 @@ h1{
   margin-bottom: auto;
 }
 
-.list-allentries ol{
-  display: grid;
-  grid-template-columns: 30% 30%;
-  padding-left: 37.5%;
-  background-color: #EA1F25;
-  color: white;
-}
+
 
 .energy-consumption-total{
   display: grid;
@@ -121,6 +124,11 @@ h1{
   font-style: italic;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.administration-counter-total{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 
