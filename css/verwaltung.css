@@ -43,7 +43,7 @@ h1{
 
 .list-allentries img{
   width: 50px;
-  height: 100%;
+  height: 50px;
   margin-left: auto;
 }
 
@@ -77,7 +77,7 @@ h1{
 }
 .energy-consumption{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 20% 80%;
 }
 
 .p-energy-consumption{
@@ -93,7 +93,34 @@ h1{
   margin-bottom: auto;
 }
 
-.list-allentries red{
+.list-allentries ol{
+  display: grid;
+  grid-template-columns: 30% 30%;
+  padding-left: 37.5%;
   background-color: #EA1F25;
+  color: white;
 }
+
+.energy-consumption-total{
+  display: grid;
+  width: 300px;
+  height: 71px;
+  grid-template-columns: 20% 80%;
+  margin-left: 30px;
+}
+
+.p-energy-consumption-total{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.p-energy-consumption-total h2{
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 

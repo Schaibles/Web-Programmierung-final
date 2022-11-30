@@ -17,21 +17,21 @@ function showEntrys(entries) {
     var entryHtmlContentRed =`
 
     <div class="administration-counter-total">
-      <img src="img/counter_dark.png"/>
+      <img src="img/counter_light.png"/>
       <p>&nbsp;${entries[0].counter}&nbsp;kWh</p>
     </div>
 
     <div class="energy-consumption-total">
-      ${getImage(entries, count)}
+      ${getImageLight(entries, count)}
       <div class="p-energy-consumption">
         <p>
         &nbsp;${calcDiffTotal(entries, count)}&nbsp;
       </p>
-      <h2>&nbsp;${getDate(entries, count)}</h2>
+      <h2>&nbsp;${getDateTotal(entries, count)}</h2>
     </div>
   </div>
   `;
-        var entryLi = document.createElement("red");
+        var entryLi = document.createElement("ol");
           entryLi.innerHTML = entryHtmlContentRed;
           appendById("entries", entryLi);
   
@@ -105,6 +105,16 @@ function getImage(entries, count){
   }
 }
 
+function getImageLight(entries, count){
+  if(count == entries.length-1){
+    return "";
+  
+  }
+  else{
+    return `<img src="img/energy-consumption_light.png">`;
+  }
+}
+
 function getDate(entries, count){
   if(count == entries.length-1){
     return "";
@@ -121,7 +131,7 @@ function getDateTotal(entries, count){
     return "";
   }
   else{
-    return formatDate(new Date(entries[count-entries.length].date)) 
+    return formatDate(new Date(entries[entries.length-1].date)) 
     + `-` 
     +formatDate(new Date(entries[count].date));
   }
