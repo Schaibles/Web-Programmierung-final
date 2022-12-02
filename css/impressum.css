@@ -22,3 +22,7 @@ h1{
   color: blue;
   text-decoration-line: underline;
 }
+
+.fixed-width h1{
+  margin-bottom: 50px;
+}
